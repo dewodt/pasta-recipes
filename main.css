@@ -3,7 +3,6 @@ a {
 }
 
 body {
-  width: 100%;
   min-height: 100%;
   margin: 0;
   padding-top: 1rem;
@@ -29,13 +28,18 @@ body {
 }
 
 .menu-item {
-  width: 16rem;
+  width: 18rem;
   height: fit-content;
   background-color: white;
   border-radius: 15px;
   color: black;
   padding-bottom: 2px;
   cursor: pointer;
+  transition: all .25s ease-in-out;
+}
+
+.menu-item:hover {
+  transform: translateY(-0.25rem) scale(1.05);
 }
 
 .item-img {
