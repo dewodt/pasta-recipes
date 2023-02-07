@@ -24,93 +24,39 @@
   </head>
   <body>
     <h1 id="menu-title">Pasta Recipes</h1>
+    <script>
+      async function fetchMenu() {
+        // Fetch Data
+        const res = await fetch("https://www.themealdb.com/api/json/v1/1/filter.php?c=pasta");
+        const data = await res.json();
+        const meals = data.meals;
+
+        const menu = document.getElementById('menu-list');
+        meals.forEach(item => {
+          const link = document.createElement('a');
+          link.href = `recipes/${item.strMeal}`;
+
+          const container = document.createElement('div');
+          container.className = "menu-item";
+
+          const image = document.createElement('img');
+          image.className = "item-img";
+          image.loading = "lazy";
+          image.src = item.strMealThumb;
+
+          const title = document.createElement('p');
+          title.className = "item-title";
+          title.innerText = item.strMeal;
+
+          container.appendChild(image);
+          container.appendChild(title);
+          link.appendChild(container);
+          menu.appendChild(link);
+        });
+      }
+      fetchMenu();
+    </script>
     <div id="menu-list">
-      <a href="recipes/cacio-e-pepe.html">
-        <div class="menu-item">
-          <img src="images/cacio-e-pepe.png" class="item-img" loading="lazy" />
-          <p class="item-title">Cacio e pepe</p>
-        </div>
-      </a>
-      <a href="recipes/cheesy-broccoli-pasta.html">
-        <div class="menu-item">
-          <img
-            src="images/cheesy-broccoli-pasta.png"
-            class="item-img"
-            loading="lazy"
-          />
-          <p class="item-title">Cheesy Broccoli Pasta</p>
-        </div>
-      </a>
-      <a href="recipes/chicken-bacon-pasta.html">
-        <div class="menu-item">
-          <img
-            src="images/chicken-bacon-pasta.png"
-            class="item-img"
-            loading="lazy"
-          />
-          <p class="item-title">Chicken & Bacon Pasta</p>
-        </div>
-      </a>
-      <a href="recipes/chicken-pasta-bake.html">
-        <div class="menu-item">
-          <img
-            src="images/chicken-pasta-bake.png"
-            class="item-img"
-            loading="lazy"
-          />
-          <p class="item-title">Chicken Pasta Bake</p>
-        </div>
-      </a>
-      <a href="recipes/creamy-mushroom-pasta.html">
-        <div class="menu-item">
-          <img
-            src="images/creamy-mushroom-pasta.png"
-            class="item-img"
-            loading="lazy"
-          />
-          <p class="item-title">Creamy Mushroom Pasta</p>
-        </div>
-      </a>
-      <a href="recipes/fajita-style-pasta.html">
-        <div class="menu-item">
-          <img
-            src="images/fajita-style-pasta.png"
-            class="item-img"
-            loading="lazy"
-          />
-          <p class="item-title">Fajita Style Pasta</p>
-        </div>
-      </a>
-      <a href="recipes/spaghetti-bolognese.html">
-        <div class="menu-item">
-          <img
-            src="images/spaghetti-bolognese.png"
-            class="item-img"
-            loading="lazy"
-          />
-          <p class="item-title">Spaghetti Bolognese</p>
-        </div>
-      </a>
-      <a href="recipes/spaghetti-puttanesca.html">
-        <div class="menu-item">
-          <img
-            src="images/spaghetti-puttanesca.png"
-            class="item-img"
-            loading="lazy"
-          />
-          <p class="item-title">Spaghetti Puttanesca</p>
-        </div>
-      </a>
-      <a href="recipes/tuna-pasta-bake.html">
-        <div class="menu-item">
-          <img
-            src="images/tuna-pasta-bake.png"
-            class="item-img"
-            loading="lazy"
-          />
-          <p class="item-title">Tuna Pasta Bake</p>
-        </div>
-      </a>
     </div>
   </body>
 </html>
