@@ -87,6 +87,8 @@ body {
 }
 
 .menu-item:hover {
+  background-color: #208ce5;
+  color: white;
   transform: translateY(-0.25rem) scale(1.05);
 }
 
@@ -97,7 +99,7 @@ body {
 }
 
 .item-title {
-  font-variation-settings: 'wght' 600;
+  font-variation-settings: 'wght' 700;
   text-align: center;
 }
 
