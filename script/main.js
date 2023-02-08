@@ -11,7 +11,7 @@ function showData(data) {
   const menu = document.getElementById('menu-list');
   data.forEach(item => {
     const link = document.createElement('a');
-    link.href = `recipes/${item.strMeal}`;
+    link.href = `recipes/${item.idMeal}.html`;
 
     const container = document.createElement('div');
     container.className = "menu-item";
