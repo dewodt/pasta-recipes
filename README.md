@@ -9,5 +9,6 @@ This project was built to fulfill GDSC Introduction to Frontend & Basic Layoutin
 - GDSC ID: 220020012
 
 # 🗒️ Source
-The pasta recipes used in this project can be found in this [link](https://www.bbcgoodfood.com/recipes/collection/pasta-recipes).
+- The old hardcoded pasta recipes used in this project can be found in this [link](https://www.bbcgoodfood.com/recipes/collection/pasta-recipes).
+- The new pasta recipes called from an API can be found in this [link](https://www.themealdb.com/api.php).
 
